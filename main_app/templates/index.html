@@ -29,17 +29,25 @@
                         <td><a href="{% url 'delete_widget' widget.id%}" input type="submit">X</a></td>
                     </tr>
                     {% endfor %}
+                    <thead>
+                        <tr>
+                            <th>TOTAL QUANTITY</th>
+                            <th>{{ total }}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
                 </tbody>
             </table>
         {% endif %}
-        <h4>Add a Todo</h4>
+        <hr>
+        <h4>Add a Widget</h4>
         <div>
             <form class="pure-form" action="{% url 'add_widget' %}" method="post">
                 {% csrf_token %}
                 <table>
                     {{ widget_form.as_table }}
                 </table>
-                <input type="submit" value="Add Todo" class="pure-button">
+                <input type="submit" value="Add Widget" class="pure-button">
             </form>
         </div>
 </body>

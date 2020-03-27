@@ -11,9 +11,13 @@ class WidgetDelete(DeleteView):
 def index(request):
     widgets = Widget.objects.all()
     widget_form = WidgetForm()
+    total = 0
+    for widget in widgets:
+        total += widget.quantity
     return render(request, 'index.html', {
         'widgets': widgets,
-        'widget_form': widget_form
+        'widget_form': widget_form,
+        'total': total
     })
 
 def add_widget(request):
