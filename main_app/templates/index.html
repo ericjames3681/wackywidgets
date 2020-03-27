@@ -10,10 +10,27 @@
 </head>
 <body>
     <h1>Wacky Widgets</h1>
-        {% if widget_list|length == 0 %}
-
+        {% if widgets|length == 0 %}
+            <h3>No Widgets Exist</h3>
         {% else %}
-
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="pure-table-striped">
+                    {% for widget in widgets %}
+                    <tr>
+                        <td>{{ widget.description }}</td>
+                        <td>{{ widget.quantity }}</td>
+                        <td>X</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         {% endif %}
 </body>
 </html>

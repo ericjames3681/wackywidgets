@@ -4,4 +4,4 @@ from .models import Widget
 
 def index(request):
     widgets = Widget.objects.all()
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'widgets': widgets})
