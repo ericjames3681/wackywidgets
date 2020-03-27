@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{ widget.description }}</td>
                         <td>{{ widget.quantity }}</td>
-                        <td>X</td>
+                        <td><a href="{% url 'delete_widget' widget.id%}" input type="submit">X</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -39,7 +39,7 @@
                 <table>
                     {{ widget_form.as_table }}
                 </table>
-                <input type="submit" value="Add Todo" class="pure-form btn">
+                <input type="submit" value="Add Todo" class="pure-button">
             </form>
         </div>
 </body>
